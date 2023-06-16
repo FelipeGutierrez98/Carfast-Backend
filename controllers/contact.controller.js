@@ -8,15 +8,15 @@ exports.sendEmail = async (req, res) => {
     const transporter = nodemailer.createTransport({
       service: 'gmail', // Servicio de correo electrónico que estás utilizando
       auth: {
-        user: 'carfastweb@gmail.com', // Tu dirección de correo electrónico
-        pass: 'zjowroefsmmcspkl', // Tu contraseña de correo electrónico
+        user: process.env.EMAIL, // Tu dirección de correo electrónico
+        pass: process.env.PASS_EMAIL, // Tu contraseña de correo electrónico
       },
     })
 
     // Configurar el contenido del correo electrónico
     const mailOptions = {
-      from: 'carfastweb@gmail.com', // Tu dirección de correo electrónico
-      to: 'carfastweb@gmail.com',
+      from: process.env.EMAIL, // Tu dirección de correo electrónico
+      to: process.env.EMAIL,
       cc: email,
       subject: subject,
       text: `Nombre: ${name}\nCorreo: ${email}\nMensaje: ${message}`,

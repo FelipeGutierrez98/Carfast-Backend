@@ -2,9 +2,13 @@
   "name": "consessionario-mean",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "index.js",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
-    "dev": "nodemon ./main.js"
+    "start": "node ./index.js",
+    "dev": "nodemon ./index.js"
   },
   "keywords": [],
   "author": "",
